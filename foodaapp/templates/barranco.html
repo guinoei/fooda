@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="rests">
+    {% for restaurant in barranco %}
+    <div class="rest">
+        <div class="title">
+            <a href="">
+                <h2>{{ restaurant.name }}</h2>
+            </a>
+        </div>
+        <div class="card-body">
+            <i><h5>{{ restaurant.category }}</h5></i>
+            <i><h4 class="desc" >{{ restaurant.description }}</h4></i>
+            {% if restaurant.rate %}
+            <h2>{{ restaurant.rate }}</h2>
+            {% endif %}
+            <a href="{{ restaurant.map_link }}" target="_blank"><img src="/static/map.png"></a>
+        </div>
+    </div>
+    {% endfor %}
+    <img class="logo-white" src="/static/fooda-favicon.png">
+</div>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .rests {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .rest {
+        text-align: center;        
+        padding: 7px;
+        width: 310px;
+        height: 170px;
+        transition: .1s ease;
+        border-bottom: solid 1px white;
+        margin-bottom: 10px;
+    }
+
+    .rest:hover {
+        transform: scale(1.04);
+        transition: .2s ease;
+    }
+
+    .title{
+        margin-bottom: 5px;
+    }
+
+    .title a{
+        color: white;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .desc{
+        font-weight: 300;
+    }
+
+    .card-body img{
+        height: 40px;
+        width: 40px;
+    }
+
+    .logo-white{
+        margin: 20px 100px;
+        height: 200px;
+        width: 200px;
+    }
+</style>
+
+{% endblock %}

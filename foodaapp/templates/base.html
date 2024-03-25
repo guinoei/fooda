@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/static/fooda-favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fooda</title>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">
+            <a href="{% url 'home' %}">
+                <img class="logo" src="/static/fooda-white.png" alt="fooda-logo">
+            </a>
+        </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Comfortaa", sans-serif;
+        text-decoration: none;
+    }
+
+    body {        
+        background: rgb(30, 30, 30);
+        color: white;
+    }
+
+    .header-container {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 95px;
+    }
+
+    .logo {
+        width: 300px;
+        height: 95px;
+    }
+</style>
+
+</html>

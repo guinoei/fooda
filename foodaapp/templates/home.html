@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content">
+    <a href="{% url 'barranco' %}">
+        <div class="districts">
+            <h1>Barranco</h1>
+        </div>
+    </a>
+</div>
+
+<style>
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .districts {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+        height: 60px;
+        width: 180px;        
+        border-radius: 20px;
+        font-weight: 300;
+        transition: .1s ease;
+    }
+
+    .districts:hover {
+        transition: .2s ease;
+        transform: scale(1.05);
+        box-shadow: 0px 0px 7px whitesmoke;        
+    }
+</style>
+
+{% endblock %}
