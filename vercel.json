@@ -1,12 +1,13 @@
 {
     "builds": [{
-        "src": "foodaapp/wsgi.py",
-        "use": "@vercel/python"        
+        "src": "fooda/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "foodaapp/wsgi.py"
+            "dest": "fooda/wsgi.py"
         }
     ]
 }
